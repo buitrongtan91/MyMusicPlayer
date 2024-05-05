@@ -1298,6 +1298,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 10px;
 }
 
 .song {
@@ -1365,7 +1366,7 @@ body {
 }
 
 .active {
-  background: rgba(155, 77, 224, 0.4039215686);
+  background: rgba(155, 77, 224, 0.2039215686);
 }
 
 /*# sourceMappingURL=main.css.map */

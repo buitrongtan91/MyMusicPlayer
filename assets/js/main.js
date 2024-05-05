@@ -54,12 +54,7 @@ const app = {
             path: "./assets/music/loving.mp3",
             image: "./assets/img/loving.jpg",
         },
-        {
-            name: "CHO MÌNH EM",
-            singer: "BINZ x ĐEN",
-            path: "./assets/music/chominhem.mp3",
-            image: "./assets/img/chominhem.jpg",
-        },
+
         {
             name: "Missing You",
             singer: "Vũ Thanh Vân",
@@ -72,7 +67,14 @@ const app = {
             path: "./assets/music/hoavoloai.mp3",
             image: "./assets/img/hoavoloai.jpg",
         },
+        {
+            name: "CHO MÌNH EM",
+            singer: "BINZ x ĐEN",
+            path: "./assets/music/chominhem.mp3",
+            image: "./assets/img/chominhem.jpg",
+        },
     ],
+
     setActive() {
         let list = $$(".song");
         for (const value of list) {
@@ -141,8 +143,9 @@ const app = {
     },
     handleEvents() {
         const cdWidth = cd.offsetWidth;
+
         const cdAnimation = cd.animate([{ transform: "rotate(360deg)" }], {
-            duration: 10000,
+            duration: 20000,
             iterations: Infinity,
         });
         cdAnimation.pause();
@@ -280,7 +283,8 @@ function shuffle(arr) {
     let result = [];
 
     for (let i = arrLength - 1; i >= 0; i--) {
-        let randomIndex = Math.floor(Math.random() * i);
+        let randomIndex = Math.round(Math.random() * i);
+
         result.push(tempArr[randomIndex]);
         tempArr = tempArr.filter((e, index) => {
             return index !== randomIndex;
@@ -296,3 +300,7 @@ function songClickHandle(index) {
     app.loadCurrentSong();
     app.player(app.isPlaying);
 }
+
+let test = [1, 2, 3, 4, 5, 6, 7, 8];
+
+console.log(shuffle(test));
