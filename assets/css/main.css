@@ -1364,4 +1364,8 @@ body {
   filter: brightness(0) saturate(100%) invert(37%) sepia(95%) saturate(762%) hue-rotate(238deg) brightness(90%) contrast(96%);
 }
 
+.active {
+  background: rgba(155, 77, 224, 0.4039215686);
+}
+
 /*# sourceMappingURL=main.css.map */

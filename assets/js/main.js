@@ -73,6 +73,13 @@ const app = {
             image: "./assets/img/hoavoloai.jpg",
         },
     ],
+    setActive() {
+        let list = $$(".song");
+        for (const value of list) {
+            value.classList.remove("active");
+        }
+        $(`.index-${this.currentIndex}`).classList.add("active");
+    },
     player(isPlaying) {
         if (isPlaying) {
             audio.play();
@@ -97,6 +104,7 @@ const app = {
     },
     loadCurrentSong() {
         const currentSong = this.getCurrentSong();
+        this.setActive();
 
         heading.innerText = currentSong.name;
         cdThumb.attributes.src.value = currentSong.image;
@@ -105,7 +113,7 @@ const app = {
     render() {
         const htmls = this.playlist.map((song, index) => {
             return `
-            <div class="song" onclick="songClickHandle(${index})"  >
+            <div class="song index-${index}" onclick="songClickHandle(${index})"  >
                 <div class="song-thumb">
                     <img
                         src="${song.image}"
@@ -133,6 +141,11 @@ const app = {
     },
     handleEvents() {
         const cdWidth = cd.offsetWidth;
+        const cdAnimation = cd.animate([{ transform: "rotate(360deg)" }], {
+            duration: 10000,
+            iterations: Infinity,
+        });
+        cdAnimation.pause();
         function progressChangeHandle(progress) {
             const value = progress.value;
             const max = progress.max;
@@ -166,9 +179,11 @@ const app = {
             if (this.isPlaying) {
                 this.player(false);
                 this.isPlaying = false;
+                cdAnimation.pause();
             } else {
                 this.player(true);
                 this.isPlaying = true;
+                cdAnimation.play();
             }
         });
 
@@ -235,15 +250,16 @@ const app = {
 
                 this.player(this.isPlaying);
                 this.render();
+                this.setActive();
             } else {
                 this.isShuffling = true;
                 this.currentIndex = 0;
                 shuffleBtn.classList.add("shuffling");
                 this.shuffledList = shuffle(this.songs);
                 this.setPlaylist(this.shuffledList);
+                this.render();
                 this.loadCurrentSong();
                 this.player(this.isPlaying);
-                this.render();
             }
         });
     },

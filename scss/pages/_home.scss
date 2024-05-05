@@ -10,6 +10,7 @@
     justify-content: center;
     padding: 20px 0;
     width: 200px;
+
     &-thumb {
         position: relative;
         width: 100%;
@@ -159,4 +160,8 @@
 .shuffling {
     filter: brightness(0) saturate(100%) invert(37%) sepia(95%) saturate(762%)
         hue-rotate(238deg) brightness(90%) contrast(96%);
+}
+
+.active {
+    background: #9b4de067;
 }
