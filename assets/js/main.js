@@ -22,7 +22,7 @@ const app = {
             name: "Cho tôi lang thang",
             singer: "Đen Vâu",
             path: "./assets/music/chotoilangthang.mp3",
-            image: "/assets/img/chotoilangthang.jpg",
+            image: "./assets/img/chotoilangthang.jpg",
         },
         {
             name: "She neva know",
@@ -59,6 +59,18 @@ const app = {
             singer: "BINZ x ĐEN",
             path: "./assets/music/chominhem.mp3",
             image: "./assets/img/chominhem.jpg",
+        },
+        {
+            name: "Missing You",
+            singer: "Vũ Thanh Vân",
+            path: "./assets/music/missingyou.mp3",
+            image: "./assets/img/missingyou.jpg",
+        },
+        {
+            name: "Hoa Vô Loài",
+            singer: "Minionn",
+            path: "./assets/music/hoavoloai.mp3",
+            image: "./assets/img/hoavoloai.jpg",
         },
     ],
     player(isPlaying) {
