@@ -1,0 +1,22 @@
+.header {
+    background: #170f23;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+.song-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 141.667%;
+    color: #fff;
+}
+.status {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 150%;
+    color: #9b4de0;
+}

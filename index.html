@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Music Player</title>
+        <link rel="stylesheet" href="./assets/font/stylesheet.css" />
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <script src="./assets/js/load.js"></script>
+    </head>
+    <body>
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Header -->
+            <header id="header" class="header"></header>
+            <script>
+                load("#header", "./templates/header.html");
+            </script>
+
+            <!-- CD -->
+            <div class="cd container">
+                <div class="cd-thumb">
+                    <img
+                        src="./assets/img/cd.jpg"
+                        alt=""
+                        class="cd-thumb__img"
+                    />
+                </div>
+            </div>
+
+            <!-- Control -->
+            <div class="control container">
+                <div class="btn repeat-btn">
+                    <img src="./assets/icon/reload.svg" alt="" class="icon" />
+                </div>
+                <div class="btn previous-btn">
+                    <img src="./assets/icon/previous.svg" alt="" class="icon" />
+                </div>
+                <div class="btn play-btn">
+                    <img
+                        src="./assets/icon/pause.svg"
+                        alt=""
+                        class="icon pause-icon"
+                    />
+                    <img
+                        src="/assets/icon/continue.svg"
+                        alt=""
+                        class="icon continue-icon"
+                    />
+                </div>
+                <div class="btn next-btn">
+                    <img src="./assets/icon/next.svg" alt="" class="icon" />
+                </div>
+                <div class="btn shuffle-btn">
+                    <img src="./assets/icon/shuffle.svg" alt="" class="icon" />
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="progress container">
+                <input
+                    type="range"
+                    value="0"
+                    step="any"
+                    min="0"
+                    max="1000"
+                    name="Progress"
+                    id="progress"
+                    class="progress-input"
+                />
+            </div>
+
+            <!-- Audio -->
+            <audio
+                src="./assets/music/chotoilangthang.mp3"
+                class="audio"
+            ></audio>
+        </div>
+
+        <div class="play-list container"></div>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>
